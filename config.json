@@ -1,13 +1,13 @@
 {
 
-"token" : "",
-"DURUM" : "",
-"botID" : "",
-"ConsoleLog" : "",
-"SunucuID" : "",
+"token" : "BOTUN TOKENİNİ YAZICAN",
+"DURUM" : "DURUM KISMINDA YAZMASINI İSTEDİĞİNİZ YAZI",
+"botID" : "BOTUN ID SI",
+"ConsoleLog" : "CONSOL LOGU YAZISI",
+"SunucuID" : "SUNUCUNUN ID SI",
 "Prefix" : "!",
-"Banaciklamasi" : "",
-"Banistisna": ["",""]
+"Banaciklamasi" : "BANLARIN ACIKLAMASI",
+"Banistisna": ["BOTUN ID SI","SIZIN IDNIZ","ISTEDIĞINIZ BAŞKA ID"]
 
 
 }
