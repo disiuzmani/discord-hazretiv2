@@ -11,23 +11,18 @@ module.exports = {
                 .setRequired(true)),
 
     async execute(interaction) {
-        
         if (!interaction.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR)) {
             return interaction.reply({ content: 'Bu komutu kullanmak için yeterli izniniz yok.', ephemeral: true });
         }
 
-        
         const role = interaction.options.getRole('rol');
 
-       
-        const members = interaction.guild.members.cache;
+        
+        const membersWithRole = role.members;
 
-       
         try {
-            members.forEach(async member => {
-                await member.roles.remove(role);
-            });
-
+           
+            await Promise.all(membersWithRole.map(member => member.roles.remove(role)));
             interaction.reply({ content: `Tüm üyelerden ${role.name} rolü başarıyla alındı.`, ephemeral: true });
         } catch (error) {
             console.error('Rol alınırken bir hata oluştu:', error);
