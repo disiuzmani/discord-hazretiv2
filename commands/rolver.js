@@ -11,20 +11,15 @@ module.exports = {
                 .setRequired(true)),
 
     async execute(interaction) {
-        
         if (!interaction.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR)) {
             return interaction.reply({ content: 'Bu komutu kullanmak için yeterli izniniz yok.', ephemeral: true });
         }
 
-       
         const role = interaction.options.getRole('rol');
 
-       
-        const members = interaction.guild.members.cache;
-
-       
+        
         try {
-            members.forEach(async member => {
+            await interaction.guild.members.cache.forEach(async member => {
                 await member.roles.add(role);
             });
 
